@@ -24,7 +24,11 @@ setup() {
         touch ${MKDN_FILE}
         touch ${METADATA_FILE}
         printf "%s\n%s\n" 'title: TITEL' 'lang: de_DE' > "${METADATA_FILE}"
-        ${TEST_UNDER_EXAMINATION} "${PARAM_TARGET}" "${PARAM_BUILD_DIRECTORY}" "${PARAM_DOCUMENT_DIR}" "${PARAM_DOCUMENTROOT}"
+        ${TEST_UNDER_EXAMINATION} \
+            "${PARAM_TARGET}" \
+            "${PARAM_BUILD_DIRECTORY}" \
+            "${PARAM_DOCUMENT_DIR}" \
+            "${PARAM_DOCUMENTROOT}"
         touch "${FIRST_RUN_OF_TEST_UNDER_EXAMINATION}"
     fi
 }

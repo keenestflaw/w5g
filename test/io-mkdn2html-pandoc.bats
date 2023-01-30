@@ -18,6 +18,8 @@ setup() {
 
 @test 'Produced a HTML file from a MARKDOWN document at the document facility' {
     tap_print_var_value DOCUMENTS_DIR
-    io-html2mkdn-pandoc <(port-mkdn2html-positional2named_parameter "${DOCUMENTS_DIR}/index.html" "${DOCUMENTS_DIR}/index.md" "${DOCUMENTS_DIR}/metadata.yaml" )
+    io-mkdn2html-pandoc \
+        <(port-mkdn2html-positional2named_parameter \
+        "${DOCUMENTS_DIR}/index.html" "${DOCUMENTS_DIR}/index.md" "${DOCUMENTS_DIR}/metadata.yaml" )
     assert [ -e "${DOCUMENTS_DIR}/index.html" ]
 }

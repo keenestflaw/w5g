@@ -1,4 +1,4 @@
-sudo apt install gmsl pandoc
+sudo apt install gmsl pandoc remake
 
 git submodule add https://github.com/bats-core/bats-core.git test/bats --branch v1.2.8
 git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support --branch v0.3.0
