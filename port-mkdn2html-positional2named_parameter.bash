@@ -2,7 +2,7 @@ port-mkdn2html-positional2named_parameter() {
 source io-cli-read_positional_arguments.bash
 io-cli-read_positional_arguments "${@}"
 
-local -ra _names_=(OUTPUT_FILE INPUT_FILE METADATA_FILE)
+local -ra _names_=(OUTPUT_FILE INPUT_FILE METADATA_FILE DATA_DIR)
 local  -a configuration_items=()
 
 for j in ${!_names_[@]}; do

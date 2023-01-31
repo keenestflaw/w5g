@@ -14,17 +14,19 @@ setup() {
     PARAM_DOCUMENT_DIR="DOCUMENT_DIR=${DOCUMENT_DIR}" 
     METADATA_FILE="${DOCUMENT_DIR}/metadata.yaml"
     PARAM_METADATA_FILE="${METADATA_FILE}"
+    DATA_DIR="${DOCUMENTS_DIR}/.pandoc/template"
+    PARAM_DATA_DIR="DATA_DIR=${DATA_DIR}"    
     DOCUMENTROOT="${BUILD_DIRECTORY}/public_html"
     PARAM_HTML_FILE="${DOCUMENTROOT}/index.html"
     PARAM_DOCUMENTROOT="DOCUMENTROOT=${DOCUMENTROOT}"
     load "../${TEST_UNDER_EXAMINATION}"
     if [[ ! -e "${FIRST_RUN_OF_TEST_UNDER_EXAMINATION}" ]]; then
         mkdir -pv "${DOCUMENT_DIR}" "${DOCUMENTROOT}" "${BUILD_DIRECTORY}"
-        cp -v makefile "${BUILD_DIRECTORY}"
+        cp -v ${PROJECT_ROOT}/makefile "${BUILD_DIRECTORY}"
         touch ${MKDN_FILE}
         touch ${METADATA_FILE}
         printf "%s\n%s\n" 'title: TITEL' 'lang: de_DE' > "${METADATA_FILE}"
-        ${TEST_UNDER_EXAMINATION} "${PARAM_HTML_FILE}" "${PARAM_MKDN_FILE}" "${PARAM_METADATA_FILE}"
+        ${TEST_UNDER_EXAMINATION} "${PARAM_HTML_FILE}" "${PARAM_MKDN_FILE}" "${PARAM_METADATA_FILE}" "${PARAM_DATA_DIR}"
         touch "${FIRST_RUN_OF_TEST_UNDER_EXAMINATION}"
     fi
 }
