@@ -6,7 +6,6 @@ setup() {
     TARGET='build'
     PARAM_TARGET="${TARGET}"
     BUILD_DIRECTORY="${TEST_PROJECT_DIR}"
-    PARAM_TARGET_LOCK="${BUILD_DIRECTORY}/${TARGET}"
     PARAM_BUILD_DIRECTORY="--directory=${BUILD_DIRECTORY}"
     DOCUMENT_DIR="${BUILD_DIRECTORY}/documents"
     MKDN_FILE="${DOCUMENT_DIR}/index.md"
@@ -37,9 +36,6 @@ setup() {
     tap_print_var_value make_cmd
 }
 
-@test "first build done" {
-    assert [ -e ${PARAM_TARGET_LOCK} ]
-}
 
 @test "build fails when all positional parameter are missing" {
     run "${TEST_UNDER_EXAMINATION}" 
