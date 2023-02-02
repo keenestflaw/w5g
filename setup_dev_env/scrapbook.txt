@@ -1,4 +1,5 @@
-sudo apt install gmsl pandoc remake
+sudo apt install gmsl pandoc remake libxml2-utils
+libxml2-utils -> xmllint
 
 git submodule add https://github.com/bats-core/bats-core.git test/bats --branch v1.2.8
 git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support --branch v0.3.0

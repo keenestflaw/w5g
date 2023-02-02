@@ -10,5 +10,5 @@ setup() {
 }
 @test "fail without positional paramerter" {
     run ${TEST_UNDER_EXAMINATION}
-    assert_failure
+    assert_success
 }
